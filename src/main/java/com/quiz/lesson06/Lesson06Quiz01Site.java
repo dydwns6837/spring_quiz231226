@@ -53,4 +53,24 @@ public class Lesson06Quiz01Site {
 		
 		return "lesson06/afterAddSite";
 	}
+	
+	// 즐겨찾기 중복 검사 - AJAX
+	@ResponseBody
+	@PostMapping("/is-duplication-url")
+	public Map<String, Object> isDuplicationUrl(
+			@RequestParam("url")String url) {
+		
+		// DB select
+		boolean isDuplication = siteBO.isDuplicationUrl(url);
+		
+		// 응답
+		Map<String, Object> result = new HashMap<>();
+		result.put("code", 200);
+		result.put("is_duplication", isDuplication);
+		return result;
+	}
+	
+	// 즐겨찾기 삭제 - AJAX 요청
+	@ResponseBody
+	@GetMapping("")
 }

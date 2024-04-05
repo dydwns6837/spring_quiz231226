@@ -30,4 +30,17 @@
 		FROM
 			`site`
  	</select>
+ 	
+ 	<select id="selectSiteListByUrl" parameterType="string" resultType="com.quiz.lesson06.domain.Site">
+ 		SELECT
+ 			`id`
+ 			,`name`
+			,`url`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`site`
+		WHERE
+			`url` = #{url}
+ 	</select>
  </mapper>

@@ -15,4 +15,7 @@ public interface SiteMapper {
 			@Param("url") String url);
 	
 	public List<Site> selectSiteList();
+	
+	// input:url output:List<Site>
+	public List<Site> selectSiteListByUrl(String url);
 }

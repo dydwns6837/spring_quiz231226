@@ -23,4 +23,14 @@ public class SiteBO {
 	public List<Site> getSiteList() {
 		return siteMapper.selectSiteList();
 	}
+	
+	// input: url
+	// output: boolean
+	public boolean isDuplicationUrl(String url) {
+		// 중복 있음:List		중복 없음:[]
+		List<Site> siteList = siteMapper.selectSiteListByUrl(url);
+		// [] => false, [{}] 비어있지않으면 => true
+		return siteList.isEmpty() ? false : true;
+	}
+	
 }

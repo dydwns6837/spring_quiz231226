@@ -20,6 +20,7 @@
 					<th>No.</th>
 					<th>이름</th>
 					<th>주소</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,10 +29,18 @@
 					<td>${site.id}</td>
 					<td>${site.name}</td>
 					<td><a href="${site.url}" target="_blank">${site.url}</a></td>
+					<td><button type="button" class="del-btn btn-danger">삭제</button></td>
 				<tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+	<script>
+		$(document).ready(function() {
+			$(".del-btn").on("click", function() {
+				$.ajax
+			});
+		});
+	</script>
 </body>
 </html>
