@@ -33,4 +33,7 @@ public class SiteBO {
 		return siteList.isEmpty() ? false : true;
 	}
 	
+	public void deleteSiteById(int id) {
+		siteMapper.deleteSiteById(id);
+	}
 }

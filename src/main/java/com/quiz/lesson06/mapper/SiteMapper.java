@@ -18,4 +18,6 @@ public interface SiteMapper {
 	
 	// input:url output:List<Site>
 	public List<Site> selectSiteListByUrl(String url);
+	
+	public void deleteSiteById(int id);
 }
